@@ -1,0 +1,309 @@
+{
+  "application": "E-Commerce API Testing",
+"environment": "QA",
+"version": "1.0",
+"users": [
+{
+"id": 1,
+"firstName": "John",
+"lastName": "Smith",
+"email": "john.smith@example.com",
+"username": "johnsmith",
+"password": "Test@123",
+"role": "admin",
+"active": true,
+"age": 32,
+"phone": "+1-201-555-0101",
+"address": {
+"street": "125 Market Street",
+"city": "Newark",
+"state": "NJ",
+"zipCode": "07102",
+"country": "USA"
+},
+"preferences": {
+"newsletter": true,
+"notifications": true,
+"language": "en"
+}
+},
+{
+"id": 2,
+"firstName": "Sarah",
+"lastName": "Johnson",
+"email": "sarah.johnson@example.com",
+"username": "sarahj",
+"password": "Sarah@456",
+"role": "customer",
+"active": true,
+"age": 28,
+"phone": "+1-201-555-0102",
+"address": {
+"street": "44 Broad Street",
+"city": "Jersey City",
+"state": "NJ",
+"zipCode": "07302",
+"country": "USA"
+},
+"preferences": {
+"newsletter": false,
+"notifications": true,
+"language": "en"
+}
+},
+{
+"id": 3,
+"firstName": "Michael",
+"lastName": "Brown",
+"email": "michael.brown@example.com",
+"username": "mikebrown",
+"password": "Mike@789",
+"role": "customer",
+"active": true,
+"age": 41,
+"phone": "+1-973-555-0103",
+"address": {
+"street": "88 Springfield Avenue",
+"city": "Elizabeth",
+"state": "NJ",
+"zipCode": "07201",
+"country": "USA"
+},
+"preferences": {
+"newsletter": true,
+"notifications": false,
+"language": "en"
+}
+},
+{
+"id": 4,
+"firstName": "Emily",
+"lastName": "Davis",
+"email": "emily.davis@example.com",
+"username": "emilyd",
+"password": "Emily@321",
+"role": "manager",
+"active": true,
+"age": 35,
+"phone": "+1-973-555-0104",
+"address": {
+"street": "22 Main Street",
+"city": "Paterson",
+"state": "NJ",
+"zipCode": "07501",
+"country": "USA"
+},
+"preferences": {
+"newsletter": true,
+"notifications": true,
+"language": "en"
+}
+},
+{
+"id": 5,
+"firstName": "David",
+"lastName": "Wilson",
+"email": "david.wilson@example.com",
+"username": "davidw",
+"password": "David@654",
+"role": "customer",
+"active": false,
+"age": 25,
+"phone": "+1-201-555-0105",
+"address": {
+"street": "19 Ferry Street",
+"city": "Newark",
+"state": "NJ",
+"zipCode": "07105",
+"country": "USA"
+},
+"preferences": {
+"newsletter": false,
+"notifications": false,
+"language": "en"
+}
+}
+],
+"authentication": {
+"loginEndpoint": "/api/auth/login",
+"refreshEndpoint": "/api/auth/refresh",
+"logoutEndpoint": "/api/auth/logout",
+"tokenType": "Bearer",
+"testToken": "FAKE_TEST_TOKEN_123456789",
+"expiredToken": "FAKE_EXPIRED_TOKEN_987654321"
+},
+"products": [
+{
+"id": 101,
+"name": "MacBook Pro 16",
+"category": "Electronics",
+"brand": "Apple",
+"price": 2499.99,
+"currency": "USD",
+"stock": 15,
+"available": true,
+"rating": 4.9,
+"tags": ["laptop", "computer", "premium"]
+},
+{
+"id": 102,
+"name": "iPhone 17",
+"category": "Electronics",
+"brand": "Apple",
+"price": 999.99,
+"currency": "USD",
+"stock": 30,
+"available": true,
+"rating": 4.8,
+"tags": ["phone", "mobile", "smartphone"]
+},
+{
+"id": 103,
+"name": "Samsung Galaxy S26",
+"category": "Electronics",
+"brand": "Samsung",
+"price": 899.99,
+"currency": "USD",
+"stock": 20,
+"available": true,
+"rating": 4.7,
+"tags": ["phone", "android", "mobile"]
+},
+{
+"id": 104,
+"name": "Sony Wireless Headphones",
+"category": "Accessories",
+"brand": "Sony",
+"price": 299.99,
+"currency": "USD",
+"stock": 50,
+"available": true,
+"rating": 4.6,
+"tags": ["audio", "headphones", "wireless"]
+},
+{
+"id": 105,
+"name": "Dell Monitor 27",
+"category": "Electronics",
+"brand": "Dell",
+"price": 349.99,
+"currency": "USD",
+"stock": 0,
+"available": false,
+"rating": 4.5,
+"tags": ["monitor", "computer", "display"]
+}
+],
+"orders": [
+{
+"orderId": 5001,
+"userId": 1,
+"productIds": [101, 104],
+"totalAmount": 2799.98,
+"status": "delivered",
+"paymentStatus": "paid",
+"orderDate": "2026-10-15",
+"shippingAddress": {
+"city": "Newark",
+"state": "NJ",
+"zipCode": "07102"
+}
+},
+{
+"orderId": 5002,
+"userId": 2,
+"productIds": [102],
+"totalAmount": 999.99,
+"status": "shipped",
+"paymentStatus": "paid",
+"orderDate": "2026-10-20",
+"shippingAddress": {
+"city": "Jersey City",
+"state": "NJ",
+"zipCode": "07302"
+}
+},
+{
+"orderId": 5003,
+"userId": 3,
+"productIds": [103, 104],
+"totalAmount": 1199.98,
+"status": "processing",
+"paymentStatus": "pending",
+"orderDate": "2026-10-25",
+"shippingAddress": {
+"city": "Elizabeth",
+"state": "NJ",
+"zipCode": "07201"
+}
+}
+],
+"paymentMethods": [
+{
+"id": 1,
+"userId": 1,
+"type": "credit_card",
+"cardHolder": "John Smith",
+"lastFourDigits": "4242",
+"expirationMonth": 12,
+"expirationYear": 2028,
+"default": true
+},
+{
+"id": 2,
+"userId": 2,
+"type": "debit_card",
+"cardHolder": "Sarah Johnson",
+"lastFourDigits": "1111",
+"expirationMonth": 8,
+"expirationYear": 2029,
+"default": true
+}
+],
+"testScenarios": [
+{
+"scenarioId": "TC001",
+"description": "Login with valid credentials",
+"username": "johnsmith",
+"password": "Test@123",
+"expectedStatus": 200
+},
+{
+"scenarioId": "TC002",
+"description": "Login with invalid password",
+"username": "johnsmith",
+"password": "WrongPassword",
+"expectedStatus": 401
+},
+{
+"scenarioId": "TC003",
+"description": "Get existing user",
+"userId": 1,
+"expectedStatus": 200
+},
+{
+"scenarioId": "TC004",
+"description": "Get non-existing user",
+"userId": 999,
+"expectedStatus": 404
+},
+{
+"scenarioId": "TC005",
+"description": "Get inactive user",
+"userId": 5,
+"expectedStatus": 403
+},
+{
+"scenarioId": "TC006",
+"description": "Get existing product",
+"productId": 101,
+"expectedStatus": 200
+},
+{
+"scenarioId": "TC007",
+"description": "Get unavailable product",
+"productId": 105,
+"expectedStatus": 200
+}
+]
+}
