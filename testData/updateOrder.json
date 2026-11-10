@@ -1,0 +1,14 @@
+{
+"orderId": 5030,
+"userId": 1,
+"productIds": [200, 108],
+"totalAmount": 3099.98,
+"status": "delivered",
+"paymentStatus": "paid",
+"orderDate": "2027-10-20",
+"shippingAddress": {
+"city": "Canada",
+"state": "Can",
+"zipCode": "08500"
+}
+}
