@@ -1,0 +1,16 @@
+ 
+
+{
+"orderId": 5020,
+"userId": 1,
+"productIds": [104, 108],
+"totalAmount": 2799.98,
+"status": "delivered",
+"paymentStatus": "paid",
+"orderDate": "2026-10-20",
+"shippingAddress": {
+"city": "New York",
+"state": "NY",
+"zipCode": "08200"
+}
+}
