@@ -1,8 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { request } from "node:http";
-import { describe } from "node:test";
-const newData = require("../testData/newOrder.json");
-const UpdateNewData = require("../testData/updateOrder.json");
+const newData = require("../../testData/newOrder.json");
+const UpdateNewData = require("../../testData/updateOrder.json");
 
 
 test.describe("global testing ", () => {
