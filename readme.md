@@ -21,8 +21,13 @@ Commit C: Add login validation
 // when am working in wrong bransh
 - git reset
 - git add .
-- git slash
+- git stash
 -- open new bransh
-- git slash pop
+- git stash pop
 ### git stash
 ### git stash pop.
+```
+1. Restores your previously saved changes.
+2. Applies them to your working directory.
+3. Removes the stash entry if the application succeeds without conflicts.
+```
